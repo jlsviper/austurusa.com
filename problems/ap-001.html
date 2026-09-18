@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Austurusa Problem 001: Prescribed Lyapunov Dynamics in Autonomous Analog Systems.">
+  <title>AP-001 — Prescribed Lyapunov Dynamics</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$']]}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body class="paper">
+<main class="site">
+  <header class="site-header">
+    <div class="nav"><a class="brand-link" href="/" aria-label="Austurusa home"><img src="/assets/brand/austurusa-mark.svg" alt="" class="brand-mark-small"><span>Austurusa</span></a> / <a href="/#problems">open problems</a></div>
+  </header>
+
+  <h1>AP-001: Prescribed Lyapunov Dynamics in Autonomous Analog Systems</h1>
+  <p class="meta">Austurusa · problem statement v0.2 · 18 August 2026 · status: open, active</p>
+
+  <div class="abstract">
+    <strong>Problem.</strong>
+    Can a continuous-time autonomous analog system be synthesized whose largest Lyapunov exponent follows a prescribed monotone transfer law over a robust chaotic operating interval?
+  </div>
+
+  <table class="spec">
+    <tr><th>Target</th><td>Construct a bounded autonomous analog flow with control voltage $V_C$ such that $\lambda_1(V_C)=aV_C+b$ to a stated tolerance over a nonzero interval, with $\lambda_1>0$ throughout.</td></tr>
+    <tr><th>Constraint</th><td>Periodic windows should be excluded by construction, not avoided by choosing convenient sweep points after the fact.</td></tr>
+    <tr><th>Physical test</th><td>The transfer law should survive a realizable circuit model, finite bandwidth, component tolerances, and device variation.</td></tr>
+    <tr><th>Failure condition</th><td>If the prescribed law cannot survive a stated perturbation class or converged numerical integration, the proposed architecture fails.</td></tr>
+  </table>
+
+  <h2>1. Formal objective</h2>
+  <p>Let</p>
+  <div class="equation">$$\dot{\mathbf{x}}=f(\mathbf{x},V_C), \qquad \mathbf{x}\in\mathbb{R}^n.$$</div>
+  <p>The desired operating interval $V_C\in[V_1,V_2]$ supports a bounded chaotic attractor with</p>
+  <div class="equation">$$\lambda_1(V_C)=aV_C+b,\qquad a\neq0,\qquad \lambda_1(V_C)>0.$$</div>
+  <p>Exact equality is an ideal target. A physical realization would state an explicit error bound and perturbation model.</p>
+
+  <h2>2. Design issue</h2>
+  <p>In a conventional tunable chaotic oscillator, changing a parameter usually changes both local tangent-space expansion and the invariant measure of the attractor. The largest exponent can therefore be written schematically as</p>
+  <div class="equation">$$\lambda_1(V_C)=\int \rho(\mathbf{x};V_C)\,q(\mathbf{x},V_C)\,d\mathbf{x},$$</div>
+  <p>so a simple control voltage need not produce a simple $\lambda_1$ law. The constructive problem is to separate control of local expansion from reinjection geometry, residence time, and invariant measure strongly enough that the global exponent becomes an engineered transfer characteristic.</p>
+
+  <h2>3. Structural boundary at zero</h2>
+  <p>A bounded non-equilibrium trajectory of an autonomous continuous-time flow has a neutral direction associated with time translation. Thus a sustained autonomous oscillatory attractor cannot have a strictly negative largest Lyapunov exponent. This places a structural boundary at $\lambda_1=0$ for any controller that attempts to regulate the largest exponent while maintaining oscillation.</p>
+
+  <h2>4. Candidate constructive route</h2>
+  <p>One route is to seek an autonomous flow with a controlled Poincaré return map $F$ and nearly fixed return time $T_0$. If the return map has exponent $\Lambda(V_C)$, then the flow suggests</p>
+  <div class="equation">$$\lambda_1(V_C)=\frac{\Lambda(V_C)}{T_0}.$$</div>
+  <p>The resulting circuit problem is to realize stretching, folding/reinjection, and autonomous timing in a way that preserves the intended exponent law rather than merely producing visually chaotic trajectories.</p>
+
+  <h2>5. Validation plan</h2>
+  <ol>
+    <li>Derive a candidate system and its expected Lyapunov law.</li>
+    <li>Validate with independent ODE solvers and timestep convergence.</li>
+    <li>Implement a behavioral LTspice model and check solver sensitivity.</li>
+    <li>Replace behavioral blocks with realizable analog circuitry.</li>
+    <li>Build a PCB only after the mathematical and numerical model survives falsification attempts.</li>
+  </ol>
+
+  <h2>6. Status</h2>
+  <p>No novelty claim is made on this page. AP-001 remains an open research problem until the prior-art search and constructive analysis are complete.</p>
+
+  <footer><a href="/">← index</a> · AP-001</footer>
+</main>
+</body>
+</html>

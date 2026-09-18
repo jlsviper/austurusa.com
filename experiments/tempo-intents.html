@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Austurusa experiment: Tempo Payment Intent Settler (TPIS).">
+  <title>EXP-002 — Tempo Payment Intent Settler</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<main class="site">
+  <header class="site-header"><div class="nav"><a class="brand-link" href="/" aria-label="Austurusa home"><img src="/assets/brand/austurusa-mark.svg" alt="" class="brand-mark-small"><span>Austurusa</span></a> / <a href="/experiments/">experiments</a></div></header>
+
+  <h1>Tempo Payment Intent Settler (TPIS)</h1>
+  <p class="meta">EXP-002 · systems experiment / reference implementation · 2026</p>
+
+  <p><strong>Repository:</strong> <a href="https://github.com/jlsviper/tempo-intents">github.com/jlsviper/tempo-intents</a></p>
+
+  <h2>purpose</h2>
+  <p>TPIS is a minimal reference implementation for safely executing off-chain signed payment intents on-chain through permissionless relayers. The design emphasizes correctness, auditability, replay protection, expiry guarantees, and explicit failure handling.</p>
+
+  <h2>implementation</h2>
+  <ul>
+    <li>EIP-712 typed-data payment intents signed off-chain by a payer.</li>
+    <li>Permissionless relayers submit transactions and pay gas.</li>
+    <li>An executor verifies signatures, expiry, nonce validity, memo integrity, allowance, balance, and policy conditions before atomic TIP-20 settlement.</li>
+    <li>EIP-1271 smart-contract wallets are supported alongside EOAs.</li>
+    <li>A dedicated inbox tracks used and cancelled nonces to prevent replay across relayers and transactions.</li>
+  </ul>
+
+  <h2>testnet demonstrations</h2>
+  <p>The repository includes end-to-end demonstrations for basic execution, replay rejection, expiry enforcement, insufficient-balance protection, parallel intent execution, and high-throughput multi-relayer bursts with explicit transaction-nonce management.</p>
+
+  <h2>status</h2>
+  <p>Reference-grade and demo-validated on the Tempo testnet. It is not presented as production-audited software.</p>
+
+  <h2>why it is filed as an experiment</h2>
+  <p>This work is a concrete systems implementation and validation artifact rather than a formal open problem or peer-reviewed research claim. If a broader protocol result or generalizable settlement abstraction is developed from it, that result can be promoted separately into the research archive.</p>
+
+  <footer><a href="/experiments/">← experiments</a> · EXP-002</footer>
+</main>
+</body>
+</html>

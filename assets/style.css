@@ -1,0 +1,191 @@
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css');
+
+:root {
+  --text: #111;
+  --muted: #666;
+  --rule: #d6d6d6;
+  --link: #0645ad;
+  --visited: #0b0080;
+  --measure: 760px;
+  --serif: Georgia, "Times New Roman", Times, serif;
+  --latex: "KaTeX_Main", "Computer Modern Serif", "Latin Modern Roman", "Times New Roman", serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.52;
+}
+
+a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:visited { color: var(--visited); }
+a:hover { text-decoration-thickness: 2px; }
+
+.site {
+  max-width: var(--measure);
+  margin: 42px auto 72px;
+  padding: 0 22px;
+}
+
+.site-header { margin-bottom: 34px; }
+.site-title {
+  margin: 0 0 4px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.site-description { margin: 0 0 11px; }
+.nav { font-size: 15px; }
+.nav a { margin-right: 12px; }
+
+h1, h2, h3 { line-height: 1.25; }
+h1 { font-size: 27px; margin: 0 0 10px; }
+h2 {
+  font-size: 20px;
+  margin: 32px 0 12px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--rule);
+}
+h3 { font-size: 17px; margin: 24px 0 8px; }
+p { margin: 0 0 12px; }
+ul, ol { margin-top: 7px; padding-left: 24px; }
+li { margin: 3px 0; }
+
+.meta { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+.small { color: var(--muted); font-size: 14px; }
+.entry { margin: 0 0 18px; }
+.entry-title { margin-bottom: 2px; }
+.entry p { margin: 2px 0; }
+.code-id { font-family: var(--mono); font-size: 13px; color: #444; }
+
+.abstract {
+  margin: 22px 0 25px;
+  padding-left: 14px;
+  border-left: 2px solid #aaa;
+}
+.abstract strong { display: block; margin-bottom: 4px; }
+
+.paper {
+  font-family: var(--latex);
+  font-size: 17px;
+  line-height: 1.62;
+}
+.paper .site-header,
+.paper .nav,
+.paper .meta,
+.paper footer { font-family: var(--serif); }
+.paper h1 { font-family: var(--latex); font-size: 30px; font-weight: 700; }
+.paper h2 { font-family: var(--latex); font-size: 20px; }
+.paper h3 { font-family: var(--latex); }
+.equation { overflow-x: auto; margin: 18px 0; }
+
+.spec {
+  margin: 18px 0 22px;
+  border-collapse: collapse;
+  width: 100%;
+}
+.spec th, .spec td {
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid var(--rule);
+  padding: 8px 8px 8px 0;
+}
+.spec th { width: 150px; font-weight: 600; }
+
+.notice {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  margin: 16px 0;
+}
+
+footer {
+  margin-top: 42px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .site { margin-top: 26px; padding: 0 16px; }
+  .site-title { font-size: 27px; }
+  .nav a { display: inline-block; margin-bottom: 4px; }
+  h1, .paper h1 { font-size: 25px; }
+  .spec th, .spec td { display: block; width: 100%; padding-right: 0; }
+  .spec th { padding-bottom: 0; border-top: 1px solid var(--rule); }
+  .spec td { border-top: 0; padding-top: 2px; }
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.profile-photo {
+  display: block;
+  width: 180px;
+  height: auto;
+  border: 0;
+}
+@media (max-width: 520px) {
+  .profile { display: block; }
+  .profile-photo { width: 160px; margin-bottom: 14px; }
+}
+
+
+/* Austurusa identity */
+.brand-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.brand-mark-hero {
+  display: block;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+}
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 2px;
+}
+.brand-mark-small {
+  display: block;
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+}
+.artifact-callout {
+  margin: 20px 0 24px;
+  padding: 11px 13px;
+  border: 1px solid var(--rule);
+  background: #fafafa;
+}
+.artifact-callout strong { margin-right: 5px; }
+.experience-list { margin-top: 4px; }
+.experience-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #ececec;
+}
+.experience-item:first-child { padding-top: 0; }
+.experience-item:last-child { border-bottom: 0; }
+.experience-item p { margin: 0 0 3px; }
+@media (max-width: 600px) {
+  .brand-mark-hero { width: 34px; height: 34px; }
+  .brand-hero { gap: 10px; }
+}
+
+@media (max-width: 600px) {
+  .nav .brand-link { display: inline-flex; }
+}

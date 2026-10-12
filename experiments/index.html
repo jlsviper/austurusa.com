@@ -1,26 +1,28 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Experiments — Austurusa</title><link rel="stylesheet" href="/assets/style.css"><link rel="icon" href="/favicon.svg" type="image/svg+xml"></head>
-<body><main class="site">
-<header class="site-header"><h1 class="site-title">Experiments</h1><div class="nav"><a class="brand-link" href="/" aria-label="Austurusa home"><img src="/assets/brand/austurusa-mark.svg" alt="" class="brand-mark-small"><span>Austurusa</span></a></div></header>
-<p>Simulation decks, numerical checks, hardware revisions, reference implementations, measurement methods, and datasets are logged here separately from the claims they test.</p>
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Austurusa experimental archive: FIPE digital ASIC, formally verified PWM controller plan, Geiger-counter board, and archived software work.">
+      <title>Experiments and Technical Archive · Austurusa</title>
+      <link rel="canonical" href="https://austurusa.com/experiments/">
+      <link rel="stylesheet" href="/assets/style.css">
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    </head>
+    <body><main class="site">
+    <header class="site-header"><div class="nav-context"><a class="brand-link" href="/"><img src="/assets/brand/austurusa-mark.svg" alt="" class="brand-mark-small">Austurusa</a><span class="crumb-sep">/</span> Experiments</div>
+    <nav class="nav" aria-label="Primary navigation"><a href="/capabilities/">capabilities</a><a href="/work/">selected work</a><a href="/research/">research</a><a href="/about/">about</a><a href="/about/#contact">contact</a></nav></header>
+<h1>Experiments / technical archive</h1>
+<p>This chronological index contains both electronics work and earlier independent software implementations. The <a href="/work/">selected-work portfolio</a> highlights projects aligned with Austurusa's current engineering focus.</p>
+<h2>Electronic systems</h2>
+<div class="entry"><p><span class="code-id">EXP-005</span> — <strong><a href="/experiments/verified-power-controller.html">Formally Verified Power-Converter Controller</a></strong></p><p>Proposed split digital PWM / safety-kernel architecture, formal property plan, external protection assumptions, and low-voltage synchronous-buck demonstrator.</p><p class="small"><span class="status status-planned">Planned · no RTL, formal results, silicon, or board yet</span></p></div>
+<div class="entry"><p><span class="code-id">EXP-004</span> — <strong><a href="/experiments/fipe.html">FIPE — Flexible Interface Protocol Emulator</a></strong></p><p>Timing-aware I²C, SPI and UART characterization RTL; routed IHP 130 nm design, with reported physical checks for a verified snapshot.</p><p class="small"><span class="status status-implementation">Implemented / routed</span> · <a href="https://github.com/jlsviper/fipe">GitHub</a></p></div>
+<div class="entry"><p><span class="code-id">EXP-003</span> — <strong><a href="/experiments/handheld-geiger-counter.html">Handheld Geiger Counter</a></strong></p><p>Completed custom PCB with high-voltage bias, signal acquisition, embedded firmware, and laboratory measurement.</p><p class="small"><span class="status status-complete">Completed hardware · 2022</span> · <a href="/assets/pdfs/exp-003-handheld-geiger-counter.pdf">full report [PDF]</a></p></div>
+<h2>Exploratory and software archive</h2>
+<div class="entry"><p><span class="code-id">EXP-002</span> — <strong><a href="/experiments/tempo-intents.html">Tempo Payment Intent Settler</a></strong></p><p>Off-chain signed intents, validation, and settlement. Software systems archive; not an electronic-hardware service offering.</p><p class="small">Reference implementation · testnet demonstration · not production audited</p></div>
+<div class="entry"><p><span class="code-id">EXP-001</span> — <strong>AP-001 behavioral dynamics model</strong></p><p>Planned ODE and LTspice validation for the <a href="/problems/ap-001.html">Lyapunov analog-system question</a>.</p><p class="small">Not yet reported as a completed experiment</p></div>
+<h2>Recording rule</h2>
+<p>Each released figure should identify design revision, stimuli, instrument or solver configuration, calibration, measurement uncertainty, and limits. Formal claims should identify assumptions, tool version, proof engine, assertions, and traces. A status label is not a certification claim.</p>
 
-<h2>active / completed</h2>
-<div class="entry"><p><span class="code-id">EXP-004</span> — <strong><a href="/experiments/fipe.html">FIPE — Flexible Interface Protocol Emulator</a></strong></p><p>A programmable, timing-aware digital protocol engine for I²C, SPI, and UART margin characterization, with Hardcaml RTL and a completed IHP 130 nm place-and-route flow.</p><p class="small">RTL-to-GDS complete · reported 50 MHz timing closure / clean physical checks · <a href="/experiments/fipe.html">technical page and layouts</a> · <a href="https://github.com/jlsviper/fipe">GitHub</a></p></div>
-<div class="entry">
-  <p><span class="code-id">EXP-003</span> — <strong><a href="/experiments/handheld-geiger-counter.html">Handheld Geiger Counter</a></strong></p>
-  <p>Battery-powered Geiger-Müller radiation counter integrating high-voltage generation, embedded pulse acquisition, LCD readout, custom PCB hardware, and experimental calibration against a commercial reference instrument.</p>
-  <p class="small">Completed hardware experiment · 2022 · <a href="/assets/pdfs/exp-003-handheld-geiger-counter.pdf">full report [PDF]</a></p>
-</div>
-<div class="entry">
-  <p><span class="code-id">EXP-002</span> — <strong><a href="/experiments/tempo-intents.html">Tempo Payment Intent Settler (TPIS)</a></strong></p>
-  <p>A minimal settlement reference implementation for off-chain signed payment intents on Tempo, exercised against a live testnet including replay, expiry, insufficient-balance, parallel-intent, and multi-relayer burst scenarios.</p>
-  <p class="small">Reference-grade · demo-validated on Tempo testnet · not production-audited</p>
-</div>
-
-<h2>planned</h2>
-<div class="entry"><p><span class="code-id">EXP-001</span> — <strong>AP-001 behavioral dynamics model.</strong></p><p>Independent ODE implementation and behavioral LTspice model for a candidate prescribed-Lyapunov plant. Solver convergence precedes component-level design.</p></div>
-
-<h2>recording rule</h2>
-<p>Experimental figures should identify the model or board revision, stimulus, solver or instrument settings, bandwidth limits, processing, and the theoretical quantity being tested. Software experiments should identify commit/release state, network or dataset, test conditions, and known limitations.</p>
-<footer><a href="/">← index</a></footer>
-</main></body></html>
+    <footer>© 2026 Austurusa · <a href="mailto:jack@austurusa.com">jack@austurusa.com</a> · <a href="/">index</a></footer>
+    </main></body></html>

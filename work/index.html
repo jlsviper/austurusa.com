@@ -1,0 +1,24 @@
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Selected Austurusa engineering projects: FIPE ASIC, verified power controller proposal, and completed embedded Geiger counter.">
+      <title>Selected Engineering Work · Austurusa</title>
+      <link rel="canonical" href="https://austurusa.com/work/">
+      <link rel="stylesheet" href="/assets/style.css">
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    </head>
+    <body><main class="site">
+    <header class="site-header"><div class="nav-context"><a class="brand-link" href="/"><img src="/assets/brand/austurusa-mark.svg" alt="" class="brand-mark-small">Austurusa</a><span class="crumb-sep">/</span> Selected work</div>
+    <nav class="nav" aria-label="Primary navigation"><a href="/capabilities/">capabilities</a><a href="/work/">selected work</a><a href="/research/">research</a><a href="/about/">about</a><a href="/about/#contact">contact</a></nav></header>
+<h1>Selected engineering work</h1>
+<p>Technical artifacts with explicit implementation status. A completed physical-design flow is different from manufactured silicon; a planned experiment is not a validated result.</p>
+<div class="entry"><p class="entry-title"><span class="code-id">EXP-004</span> — <strong><a href="/experiments/fipe.html">FIPE — Flexible Interface Protocol Emulator</a></strong></p><p>Digital protocol timing characterization architecture, implemented in Hardcaml and routed for IHP 130 nm. The published timing/physical-check results apply to the documented verified snapshot, not automatically to later RTL revisions.</p><p class="small"><span class="status status-implementation">Implemented / routed</span> · <a href="https://github.com/jlsviper/fipe">GitHub</a></p></div>
+<div class="entry"><p class="entry-title"><span class="code-id">EXP-005</span> — <strong><a href="/experiments/verified-power-controller.html">Formally Verified Power-Converter Controller</a></strong></p><p>Proposed digital PWM architecture with a standalone safety kernel. The proof plan covers temporal pin commands; physical fail-safe behavior additionally requires clock, reset, driver, comparator, and PCB-level measures.</p><p class="small"><span class="status status-planned">Planned research / no proofs yet</span></p></div>
+<div class="entry"><p class="entry-title"><span class="code-id">EXP-003</span> — <strong><a href="/experiments/handheld-geiger-counter.html">Handheld Geiger Counter</a></strong></p><p>Completed Geiger-Müller embedded instrument with conversion, signal processing, PCB, firmware, and comparative measurements. <a href="/assets/pdfs/exp-003-handheld-geiger-counter.pdf">Full engineering report [PDF]</a>.</p><p class="small"><span class="status status-complete">Built / tested</span></p></div>
+<h2>Experimental archive</h2>
+<p>Older software implementations and early planned experiments remain available for reproducibility but are not front-page electronics case studies. <a href="/experiments/">Browse the complete experiments index →</a></p>
+
+    <footer>© 2026 Austurusa · <a href="mailto:jack@austurusa.com">jack@austurusa.com</a> · <a href="/">index</a></footer>
+    </main></body></html>

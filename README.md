@@ -1,81 +1,47 @@
-# Austurusa Research Website
+# Austurusa — Research & Engineering Website (Revision H)
 
-Static institutional site for Austurusa.
+Static site built from the user's authentic Revision G archive, preserving existing PDF reports, FIPE layout images, experience details and older research pages.
+
+## Changes in H (12 October 2026)
+
+- Repositions homepage toward IC/FPGA, mixed-signal board-level electronics, real-time embedded systems, power conversion and measurement-based analysis.
+- Creates `/capabilities/`, `/work/` and `/research/` without removing existing research and experiment URLs.
+- Adds `EXP-005` `/experiments/verified-power-controller.html` as a **planned** formally verified power-converter controller safety-kernel project. No proofs, silicon or hardware are claimed.
+- Preserves `EXP-004` FIPE as flagship implemented digital ASIC work; clarifies revision-specific physical verification.
+- Retains completed `EXP-003` Geiger counter report, AP-001/AP-002 and RN-001; moves unrelated software experiment from featured content into the archive.
+- About retains the actual historical experience from Revision G, including the Quest Global Python power-anomaly-detection correction.
+- Adds sitemap entries, richer metadata, and accessible mobile-friendly architecture diagram in HTML/CSS.
+
+## Production deployment: existing local Git clone (recommended)
+
+Extract the ZIP, then copy the **contents of `austurusa-research-rev-h/`** into the root of your already cloned `jlsviper/austurusa.com` repository. Don't accidentally create a nested directory.
+
+```bash
+cd /path/to/austurusa.com
+rsync -av /path/to/unzipped/austurusa-research-rev-h/ ./
+git status
+git add -A
+git commit -m "Rev H: electronic systems focus and verified power controller proposal"
+git push origin main
+```
+
+`rsync` intentionally does not delete unrelated files from the checkout; review `git status` before committing. Your connected Vercel Git integration should deploy on push to the production branch. No direct deploy command is required if this integration is already configured.
 
 ## Local preview
 
-From this directory:
-
 ```bash
+cd /path/to/unzipped/austurusa-research-rev-h
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Visit <http://localhost:8000>. This site contains only static HTML/CSS and existing PDFs/images, and does not require an npm build.
 
-## Recommended permanent workflow
+## Evidence levels
 
-Treat the Git repository as the source of truth for the website.
+- Proposed: concept, scope or architecture **without formal / physical evidence**.
+- Implemented: an RTL, software, schematic or physical-design artifact documented for a specified revision.
+- Verified: check type, exact design revision, tool configuration and assumptions provided.
+- Measured: actual board/silicon/instrument conditions, calibration, uncertainty and method stated.
+- Certified: only with independent, applicable assessment evidence; **not claimed here**.
 
-### First-time setup
-
-```bash
-git init
-git add .
-git commit -m "Initial Austurusa research site"
-git branch -M main
-git remote add origin https://github.com/YOUR-ACCOUNT/austurusa.com.git
-git push -u origin main
-```
-
-Create the empty GitHub repository before the final two commands.
-
-### Every future update
-
-1. Edit/add files locally.
-2. Preview with `python3 -m http.server 8000`.
-3. Commit and push:
-
-```bash
-git add .
-git commit -m "Add AP-002 problem statement"
-git push
-```
-
-Once Vercel is connected to the GitHub repository, each push to `main` becomes a production deployment automatically. Work on a separate branch when you want a preview deployment before merging.
-
-Example:
-
-```bash
-git checkout -b ap-002
-git add .
-git commit -m "Draft AP-002"
-git push -u origin ap-002
-```
-
-Vercel can create a preview URL for that branch; merge to `main` only when the draft is ready.
-
-## Content taxonomy
-
-- `AP-###` — Open Problem
-- `RN-###` — Research Note
-- `EXP-###` — Experiment / implementation / measurement artifact
-- Working Paper — manuscript with a coherent research claim, not yet a preprint
-- Preprint — publicly posted manuscript
-- Published — peer-reviewed or formally published work
-
-Keep status explicit. Do not promote simulation to measurement, implementation to research result, or conjecture to theorem.
-
-## Revision F
-
-Revision F adds AP-002 — Adaptive Causal Worlds, including the website problem page, a compiled PDF problem statement, and self-contained pdfLaTeX source.
-
-## Revision G
-
-- Adds EXP-004 / FIPE, including the IHP 130 nm routed-layout and cell-detail images.
-- Updates the home page, experiments index, and sitemap.
-- Removes the Meta experience entry and adds Python-based power anomaly detection under Quest Global.
-- All claims about FIPE's verification and timing figures are project-reported; this is not a fabricated-silicon measurement report.
-
-### Safe deployment (existing clone)
-
-Copy the contents of this extracted directory into a clean checkout of `jlsviper/austurusa.com`, then `git add -A`, commit, and push. Do not copy the parent directory as a nested folder.
+Status is associated with each project individually; prior-art patterns like Simplex are credited, and digital RTL proofs never stand in for analog hazard analysis.

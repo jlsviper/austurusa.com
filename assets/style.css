@@ -195,3 +195,50 @@ footer {
 .chip-figure a { display: block; }
 .chip-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); background: #050505; }
 .chip-figure figcaption { color: var(--muted); font-family: var(--serif); font-size: 13px; line-height: 1.48; margin-top: 7px; }
+
+/* Revision H: editorial positioning and technical project diagrams */
+.site-description { color: #404040; }
+.nav { display:flex; flex-wrap:wrap; column-gap:14px; row-gap:5px; }
+.nav a { margin-right:0; }
+.nav-context { display:flex; align-items:center; gap:7px; color:var(--muted); margin-bottom:9px; font-size:14px; }
+.crumb-sep { color:#888; }
+.subnav { margin-top:9px; }
+.intro { margin-top:27px; }
+.intro-headline { border:0; padding:0; margin:0 0 12px; font-family:var(--latex); font-size:24px; font-weight:600; line-height:1.22; }
+.lede { font-size:17px; }
+.capability-list { display:grid; grid-template-columns: 1fr 1fr; column-gap:26px; row-gap:13px; margin:7px 0 14px; }
+.capability-list>div { border-top:1px solid var(--rule); padding-top:10px; }
+.capability-list strong { display:block; }
+.capability-list p { margin-top:4px; margin-bottom:0; color:#444; font-size:14px; }
+.featured-entry { margin-top:17px; }
+.compact-list { padding-left:20px; }
+.compact-list li { margin-bottom:5px; }
+.status { font-size:12px; border:1px solid #ccc; background:#fcfcfc; color:#444; display:inline-block; padding:1px 5px; }
+.status-planned { border-style:dashed; }
+.status-complete { border-color:#9b9b9b; }
+.status-implementation { border-color:#b0b0b0; }
+.subtle-notice { border-left:3px solid #777; background:#fafafa; }
+.architecture { border:1px solid var(--rule); background:#fcfcfc; padding:16px; margin:20px 0 24px; font-family:var(--serif); }
+.diagram-row { display:flex; justify-content:space-between; align-items:stretch; gap:5px; }
+.diagram-block { border:1px solid #aaa; background:white; padding:12px 8px; flex:1; min-width:0; text-align:center; }
+.diagram-block strong { display:block; font-size:14px; }
+.diagram-block span { display:block; font-size:12px; line-height:1.45; margin-top:6px; }
+.diagram-block small { display:block; color:var(--muted); font-size:11px; margin-top:7px; }
+.diagram-key { border:2px solid #333; }
+.diagram-arrow { display:flex; justify-content:center; align-items:center; font-size:24px; padding:0 2px; }
+.diagram-lower { display:grid; grid-template-columns:1fr 1fr 1fr; gap:9px; margin-top:12px; }
+.diagram-lower>div { padding:9px; font-size:12px; line-height:1.45; border-top:1px solid #b3b3b3; }
+.diagram-lower strong { font-size:13px; }
+.diagram-path { color:#555; font-family:var(--mono); font-size:10px; }
+.diagram-caption { font-size:12px; color:var(--muted); margin:13px 0 0; line-height:1.46; }
+.paper code { font-family:var(--mono); font-size:.86em; }
+.contract th { width:170px; }
+@media (max-width:650px) {
+  .capability-list { grid-template-columns:1fr; gap:10px; }
+  .intro-headline { font-size:21px; }
+  .diagram-row { flex-direction:column; }
+  .diagram-arrow { transform:rotate(90deg); min-height:23px; }
+  .diagram-lower { grid-template-columns:1fr; }
+  .architecture { padding:12px; }
+  .nav { gap:6px 12px; }
+}

@@ -1,80 +1,52 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Austurusa is an independent open-idea organization working on difficult problems in science and engineering.">
-  <title>Austurusa</title>
-  <link rel="stylesheet" href="/assets/style.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-</head>
-<body>
-<main class="site">
-  <header class="site-header">
-    <div class="brand-hero"><img src="/assets/brand/austurusa-mark.svg" alt="" class="brand-mark-hero"><h1 class="site-title">Austurusa</h1></div>
-    <p class="site-description">An independent open-idea organization for difficult problems in science and engineering.</p>
-    <nav class="nav" aria-label="Primary">
-      <a href="/#problems">open problems</a>
-      <a href="/#research">research</a>
-      <a href="/publications/">publications</a>
-      <a href="/experiments/">experiments</a>
-      <a href="/about/">about</a>
-    </nav>
-  </header>
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Austurusa — independent electronic systems R&amp;D focused on digital ICs, FPGA, mixed-signal PCBs, power electronics, embedded controls, hardware characterization and statistics.">
+      <title>Home · Austurusa</title>
+      <link rel="canonical" href="https://austurusa.com/">
+      <link rel="stylesheet" href="/assets/style.css">
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    </head>
+    <body><main class="site">
+    <header class="site-header"><div class="brand-hero"><img src="/assets/brand/austurusa-mark.svg" alt="" class="brand-mark-hero"><h1 class="site-title">Austurusa</h1></div><p class="site-description">Independent electronic systems research &amp; development.</p>
+    <nav class="nav" aria-label="Primary navigation"><a href="/capabilities/">capabilities</a><a href="/work/">selected work</a><a href="/research/">research</a><a href="/about/">about</a><a href="/about/#contact">contact</a></nav></header>
+<section class="intro">
+  <h2 class="intro-headline">Silicon, embedded systems &amp; power electronics.</h2>
+  <p>Austurusa develops and investigates digital IC and FPGA architectures, mixed-signal board hardware, real-time embedded control, power conversion, and measurement systems. Statistical analysis and computational methods support the engineering; they are not substitutes for physical validation.</p>
+  <p class="small">Independent, founder-led R&amp;D. Every project distinguishes proposals, simulation, RTL implementation, formal verification, physical design, and measured hardware.</p>
+</section>
+<h2 id="capabilities">capabilities</h2>
+<div class="capability-list">
+  <div><strong>Digital IC &amp; FPGA</strong><p>RTL, protocol engines, hardware timing, verification, and ASIC implementation.</p></div>
+  <div><strong>Mixed-signal &amp; embedded boards</strong><p>Analog/digital integration, sensing, microcontrollers, PCB design, and real-time acquisition.</p></div>
+  <div><strong>Power electronics &amp; control</strong><p>Converter architecture, switching supervision, gate-drive interfaces, fault handling, and bench validation.</p></div>
+  <div><strong>Characterization &amp; analysis</strong><p>Automated sweeps, uncertainty, population variation, Python tooling, and evidence-led reporting.</p></div>
+</div>
+<p class="small"><a href="/capabilities/">Technical capabilities and potential engagement areas →</a></p>
+<h2 id="work">selected engineering work</h2>
+<div class="entry featured-entry"><div class="entry-title"><span class="code-id">EXP-004</span> — <strong><a href="/experiments/fipe.html">FIPE — Flexible Interface Protocol Emulator</a></strong></div>
+  <p>A programmable digital protocol stimulus-and-observation engine targeting I²C, SPI, and UART timing-margin characterization. Hardcaml design with reported routed IHP 130 nm implementation and corner timing closure for a documented revision.</p>
+  <p class="small"><span class="status status-implementation">Implemented / routed</span> · No fabricated-silicon or external-DUT characterization claim · <a href="https://github.com/jlsviper/fipe">source</a></p></div>
+<div class="entry"><div class="entry-title"><span class="code-id">EXP-005</span> — <strong><a href="/experiments/verified-power-controller.html">Formally Verified Power-Converter Controller</a></strong></div>
+  <p><em>Planned:</em> a flexible digital PWM controller with an independent, small safety kernel between control logic and gate outputs. The research target is mechanized proofs for nonoverlap, bounded fault response, configuration guards, and controlled recovery, plus a low-voltage synchronous-buck demonstration.</p>
+  <p class="small"><span class="status status-planned">Proposed / not yet verified</span> · Digital proofs will not cover analog driver, clock-loss, or power-stage behavior · <a href="/experiments/verified-power-controller.html">architecture and proof obligations →</a></p></div>
+<div class="entry"><div class="entry-title"><span class="code-id">EXP-003</span> — <strong><a href="/experiments/handheld-geiger-counter.html">Handheld Geiger Counter</a></strong></div>
+  <p>Completed embedded PCB instrument integrating high-voltage conversion, pulse detection, firmware acquisition, LCD readout, and calibration against a reference instrument.</p>
+  <p class="small"><span class="status status-complete">Built / measured</span> · 2022 · <a href="/assets/pdfs/exp-003-handheld-geiger-counter.pdf">engineering report [PDF]</a></p></div>
+<p class="small"><a href="/work/">View selected work, detailed technical pages, and experimental archive →</a></p>
+<h2 id="research">independent research</h2>
+<p>Beyond the engineering portfolio, Austurusa maintains open research in nonlinear analog dynamics, hardware reliability, and statistical / causal modeling. These investigations are not presented as delivered hardware products.</p>
+<ul class="compact-list"><li><span class="code-id">AP-001</span> <a href="/problems/ap-001.html">Prescribed Lyapunov dynamics in analog systems</a> — open problem.</li>
+<li><span class="code-id">RN-001</span> <a href="/research/residual-graphs.html">GPU health residual graphs</a> — draft research note.</li>
+<li><span class="code-id">AP-002</span> <a href="/problems/ap-002.html">Adaptive causal worlds</a> — exploratory open problem.</li></ul>
+<p class="small"><a href="/research/">Research notes, open problems, and exploratory archive →</a></p>
+<h2>engineering method</h2>
+<p>Begin with falsifiable requirements and failure modes. Compare architectures against prior art. Separate assumptions from guarantees. Use simulation, formal checks, physical implementation, and bench measurement where appropriate. Publish the revision and conditions behind each claim, including negative results.</p>
+<h2 id="contact">discuss an engineering problem</h2>
+<p>For focused exploratory work in device characterization, FPGA/embedded prototyping, power-electronics evaluation, or test automation, write to <a href="mailto:jack@austurusa.com?subject=Austurusa%20engineering%20inquiry">jack@austurusa.com</a> with the device or system, the decision to be made, and the evidence required. Scope and availability are evaluated case by case.</p>
+<p class="small">12 October 2026 — Rev H adds the proposed verified power-converter controller and refocuses the site around electronic systems engineering.</p>
 
-  <p>Austurusa studies problems that benefit from first-principles theory, computation, simulation, or physical experiment. Work is posted with its status made explicit; conjectures, research notes, simulations, measurements, implementations, and formal publications are not treated as interchangeable.</p>
-
-  <h2 id="problems">open problems</h2>
-  <div class="entry">
-    <div class="entry-title"><span class="code-id">AP-002</span> — <strong><a href="/problems/ap-002.html">Adaptive causal worlds</a></strong></div>
-    <p>Can a causal inference system recognize which families of causal assumptions remain compatible with new data before trusting its own intervention conclusions?</p>
-    <p class="small">Status: open, active · problem statement v0.1 · causal inference / foundation models · <a href="/assets/pdfs/ap-002-adaptive-causal-worlds.pdf">full statement [PDF]</a></p>
-  </div>
-  <div class="entry">
-    <div class="entry-title"><span class="code-id">AP-001</span> — <strong><a href="/problems/ap-001.html">Prescribed Lyapunov dynamics in autonomous analog systems</a></strong></div>
-    <p>Can a continuous-time autonomous analog system be synthesized whose largest Lyapunov exponent follows a prescribed monotone transfer law over a robust chaotic interval?</p>
-    <p class="small">Status: open, active · problem statement v0.2 · nonlinear circuits / dynamical systems</p>
-  </div>
-
-  <h2 id="research">research</h2>
-  <div class="entry">
-    <div class="entry-title"><span class="code-id">RN-001</span> — <strong><a href="/research/residual-graphs.html">Workload-Conditioned Health Residual Graphs for GPU Fleets</a></strong></div>
-    <p>A workload-conditioned residual-graph framework for distinguishing GPU hardware deterioration from workload shifts and observability failures, with exposure-normalized health evidence and active diagnostic selection.</p>
-    <p class="small">Status: Draft v0.1 · research note · not peer reviewed · <a href="/assets/pdfs/rn-001-gpu-health-residual-graphs.pdf">full paper [PDF]</a></p>
-  </div>
-
-  <h2>experiments</h2>
-  <div class="entry">
-    <div class="entry-title"><span class="code-id">EXP-004</span> — <strong><a href="/experiments/fipe.html">FIPE — Flexible Interface Protocol Emulator</a></strong></div>
-    <p>A programmable, timing-aware I²C / SPI / UART stimulus-and-observation engine for characterizing digital-interface margins; implemented in Hardcaml and routed in IHP 130 nm.</p>
-    <p class="small">Status: RTL-to-GDS complete · reported 50 MHz timing closure and clean physical checks · <a href="/experiments/fipe.html">implementation and layout</a> · <a href="https://github.com/jlsviper/fipe">GitHub</a></p>
-  </div>
-  <div class="entry">
-    <div class="entry-title"><span class="code-id">EXP-003</span> — <strong><a href="/experiments/handheld-geiger-counter.html">Handheld Geiger Counter</a></strong></div>
-    <p>Battery-powered Geiger-Müller radiation counter integrating high-voltage generation, embedded pulse acquisition, LCD readout, custom PCB hardware, and experimental calibration against a commercial reference instrument.</p>
-    <p class="small">Status: completed hardware experiment · 2022 · <a href="/assets/pdfs/exp-003-handheld-geiger-counter.pdf">full report [PDF]</a></p>
-  </div>
-  <div class="entry">
-    <div class="entry-title"><span class="code-id">EXP-002</span> — <strong><a href="/experiments/tempo-intents.html">Tempo Payment Intent Settler (TPIS)</a></strong></div>
-    <p>A reference implementation for permissionless settlement of off-chain signed payment intents on Tempo, with replay, expiry, cancellation, wallet, and multi-relayer failure handling.</p>
-    <p class="small">Status: reference-grade implementation · demo-validated on Tempo testnet · not production-audited</p>
-  </div>
-
-  <h2>method</h2>
-  <p>Problems are stated precisely enough to fail. The normal sequence is prior-art search, derivation, numerical validation, physical or computational experiment where appropriate, and publication. Negative results are retained when they eliminate a plausible architecture or sharpen the problem.</p>
-
-  <h2>recent notes</h2>
-  <ul>
-    <li>12 Oct 2026 — EXP-004 FIPE added with physical-layout views and implementation status.</li>
-    <li>18 Sep 2026 — AP-002 opened: Adaptive Causal Worlds.</li>
-    <li>21 Aug 2026 — RN-001 updated with the complete GPU health residual-graphs paper.</li>
-    <li>21 Aug 2026 — EXP-003 added with the complete handheld Geiger-counter engineering report.</li>
-    <li>18 Aug 2026 — EXP-002 added to the experiments archive.</li>
-    <li>18 Aug 2026 — AP-001 opened.</li>
-    <li>18 Aug 2026 — RN-001 added to the research archive.</li>
-  </ul>
-
-  <footer>© 2026 Austurusa · austurusa.com</footer>
-</main>
-</body>
-</html>
+    <footer>© 2026 Austurusa · <a href="mailto:jack@austurusa.com">jack@austurusa.com</a> · <a href="/">index</a></footer>
+    </main></body></html>

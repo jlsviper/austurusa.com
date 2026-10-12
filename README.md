@@ -68,3 +68,14 @@ Keep status explicit. Do not promote simulation to measurement, implementation t
 ## Revision F
 
 Revision F adds AP-002 — Adaptive Causal Worlds, including the website problem page, a compiled PDF problem statement, and self-contained pdfLaTeX source.
+
+## Revision G
+
+- Adds EXP-004 / FIPE, including the IHP 130 nm routed-layout and cell-detail images.
+- Updates the home page, experiments index, and sitemap.
+- Removes the Meta experience entry and adds Python-based power anomaly detection under Quest Global.
+- All claims about FIPE's verification and timing figures are project-reported; this is not a fabricated-silicon measurement report.
+
+### Safe deployment (existing clone)
+
+Copy the contents of this extracted directory into a clean checkout of `jlsviper/austurusa.com`, then `git add -A`, commit, and push. Do not copy the parent directory as a nested folder.

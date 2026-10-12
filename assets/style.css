@@ -189,3 +189,9 @@ footer {
 @media (max-width: 600px) {
   .nav .brand-link { display: inline-flex; }
 }
+
+/* Rev G: responsive ASIC artwork without changing the academic layout */
+.chip-figure { margin: 24px 0 28px; }
+.chip-figure a { display: block; }
+.chip-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); background: #050505; }
+.chip-figure figcaption { color: var(--muted); font-family: var(--serif); font-size: 13px; line-height: 1.48; margin-top: 7px; }

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run from the extracted Austurusa Rev-I FIPE folder. Git-connected Vercel deploys pushes to main.
+# Run from the extracted Austurusa Rev-J FIPE folder. Git-connected Vercel deploys pushes to main.
 set -euo pipefail
 cd "$(dirname "$0")"
 REPO_URL='https://github.com/jlsviper/austurusa.com.git'
@@ -14,7 +14,7 @@ git init -b main
 git remote add origin "$REPO_URL"
 git fetch origin main
 # Updates Git HEAD and index without changing any extracted site file.
-# Old site files that are absent from Rev-I become tracked deletions.
+# Old site files that are absent from Rev-J become tracked deletions.
 git reset --mixed origin/main
 
 echo 'Restoring the ORIGINAL Jack Shaquer portrait from the current Git revision...'
@@ -38,7 +38,7 @@ fi
 git add -A
 printf '\nChanges to publish:\n'
 git diff --cached --stat
-printf '\nPublishing FIPE-first Rev I to GitHub main (Vercel production branch)...\n'
-git commit -m 'Rev I: remove signal strip and add light/dark mode'
+printf '\nPublishing FIPE-first Rev J to GitHub main (Vercel production branch)...\n'
+git commit -m 'Rev J: fix compact sun/moon theme toggle and asset cache'
 git push -u origin main
 printf '\nGitHub push complete. Check the connected Vercel project for deployment status.\n'

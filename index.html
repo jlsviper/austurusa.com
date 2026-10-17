@@ -1,52 +1,154 @@
-    <!doctype html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Austurusa — independent electronic systems R&amp;D focused on digital ICs, FPGA, mixed-signal PCBs, power electronics, embedded controls, hardware characterization and statistics.">
-      <title>Home · Austurusa</title>
-      <link rel="canonical" href="https://austurusa.com/">
-      <link rel="stylesheet" href="/assets/style.css">
-      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    </head>
-    <body><main class="site">
-    <header class="site-header"><div class="brand-hero"><img src="/assets/brand/austurusa-mark.svg" alt="" class="brand-mark-hero"><h1 class="site-title">Austurusa</h1></div><p class="site-description">Independent electronic systems research &amp; development.</p>
-    <nav class="nav" aria-label="Primary navigation"><a href="/capabilities/">capabilities</a><a href="/work/">selected work</a><a href="/research/">research</a><a href="/about/">about</a><a href="/about/#contact">contact</a></nav></header>
-<section class="intro">
-  <h2 class="intro-headline">Silicon, embedded systems &amp; power electronics.</h2>
-  <p>Austurusa develops and investigates digital IC and FPGA architectures, mixed-signal board hardware, real-time embedded control, power conversion, and measurement systems. Statistical analysis and computational methods support the engineering; they are not substitutes for physical validation.</p>
-  <p class="small">Independent, founder-led R&amp;D. Every project distinguishes proposals, simulation, RTL implementation, formal verification, physical design, and measured hardware.</p>
-</section>
-<h2 id="capabilities">capabilities</h2>
-<div class="capability-list">
-  <div><strong>Digital IC &amp; FPGA</strong><p>RTL, protocol engines, hardware timing, verification, and ASIC implementation.</p></div>
-  <div><strong>Mixed-signal &amp; embedded boards</strong><p>Analog/digital integration, sensing, microcontrollers, PCB design, and real-time acquisition.</p></div>
-  <div><strong>Power electronics &amp; control</strong><p>Converter architecture, switching supervision, gate-drive interfaces, fault handling, and bench validation.</p></div>
-  <div><strong>Characterization &amp; analysis</strong><p>Automated sweeps, uncertainty, population variation, Python tooling, and evidence-led reporting.</p></div>
-</div>
-<p class="small"><a href="/capabilities/">Technical capabilities and potential engagement areas →</a></p>
-<h2 id="work">selected engineering work</h2>
-<div class="entry featured-entry"><div class="entry-title"><span class="code-id">EXP-004</span> — <strong><a href="/experiments/fipe.html">FIPE — Flexible Interface Protocol Emulator</a></strong></div>
-  <p>A programmable digital protocol stimulus-and-observation engine targeting I²C, SPI, and UART timing-margin characterization. Hardcaml design with reported routed IHP 130 nm implementation and corner timing closure for a documented revision.</p>
-  <p class="small"><span class="status status-implementation">Implemented / routed</span> · No fabricated-silicon or external-DUT characterization claim · <a href="https://github.com/jlsviper/fipe">source</a></p></div>
-<div class="entry"><div class="entry-title"><span class="code-id">EXP-005</span> — <strong><a href="/experiments/verified-power-controller.html">Formally Verified Power-Converter Controller</a></strong></div>
-  <p><em>Planned:</em> a flexible digital PWM controller with an independent, small safety kernel between control logic and gate outputs. The research target is mechanized proofs for nonoverlap, bounded fault response, configuration guards, and controlled recovery, plus a low-voltage synchronous-buck demonstration.</p>
-  <p class="small"><span class="status status-planned">Proposed / not yet verified</span> · Digital proofs will not cover analog driver, clock-loss, or power-stage behavior · <a href="/experiments/verified-power-controller.html">architecture and proof obligations →</a></p></div>
-<div class="entry"><div class="entry-title"><span class="code-id">EXP-003</span> — <strong><a href="/experiments/handheld-geiger-counter.html">Handheld Geiger Counter</a></strong></div>
-  <p>Completed embedded PCB instrument integrating high-voltage conversion, pulse detection, firmware acquisition, LCD readout, and calibration against a reference instrument.</p>
-  <p class="small"><span class="status status-complete">Built / measured</span> · 2022 · <a href="/assets/pdfs/exp-003-handheld-geiger-counter.pdf">engineering report [PDF]</a></p></div>
-<p class="small"><a href="/work/">View selected work, detailed technical pages, and experimental archive →</a></p>
-<h2 id="research">independent research</h2>
-<p>Beyond the engineering portfolio, Austurusa maintains open research in nonlinear analog dynamics, hardware reliability, and statistical / causal modeling. These investigations are not presented as delivered hardware products.</p>
-<ul class="compact-list"><li><span class="code-id">AP-001</span> <a href="/problems/ap-001.html">Prescribed Lyapunov dynamics in analog systems</a> — open problem.</li>
-<li><span class="code-id">RN-001</span> <a href="/research/residual-graphs.html">GPU health residual graphs</a> — draft research note.</li>
-<li><span class="code-id">AP-002</span> <a href="/problems/ap-002.html">Adaptive causal worlds</a> — exploratory open problem.</li></ul>
-<p class="small"><a href="/research/">Research notes, open problems, and exploratory archive →</a></p>
-<h2>engineering method</h2>
-<p>Begin with falsifiable requirements and failure modes. Compare architectures against prior art. Separate assumptions from guarantees. Use simulation, formal checks, physical implementation, and bench measurement where appropriate. Publish the revision and conditions behind each claim, including negative results.</p>
-<h2 id="contact">discuss an engineering problem</h2>
-<p>For focused exploratory work in device characterization, FPGA/embedded prototyping, power-electronics evaluation, or test automation, write to <a href="mailto:jack@austurusa.com?subject=Austurusa%20engineering%20inquiry">jack@austurusa.com</a> with the device or system, the decision to be made, and the evidence required. Scope and availability are evaluated case by case.</p>
-<p class="small">12 October 2026 — Rev H adds the proposed verified power-converter controller and refocuses the site around electronic systems engineering.</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b0d">
+  <meta name="description" content="FIPE by Austurusa: programmable digital-interface timing characterization, statistical margin discovery, and traceable engineering evidence for first silicon.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Austurusa">
+  <meta property="og:title" content="FIPE — Know where your silicon stops working.">
+  <meta property="og:description" content="A new class of programmable timing characterization, built for the first-silicon bench.">
+  <meta property="og:url" content="https://www.austurusa.com/">
+  <meta property="og:image" content="https://www.austurusa.com/assets/hero-silicon.webp">
+  <link rel="canonical" href="https://www.austurusa.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/hero-silicon.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
+  <title>FIPE — First-silicon timing characterization | Austurusa</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="Austurusa, back to top">
+        <span class="brand-glyph" aria-hidden="true"><svg viewBox="0 0 38 38" fill="none"><path d="M18.8 3 35 33H2.8L18.8 3Z" stroke="currentColor" stroke-width="1.6"/><path d="m18.8 15.5-9.7 17.2M18.8 15.5l9.5 17.2M11.1 25.9h15.4" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="7" r="2.3" fill="currentColor"/></svg></span>
+        <span>AUSTURUSA<span class="brand-period">.</span></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#platform">Platform</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#protocols">Protocols</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="nav-contact" href="mailto:jack@austurusa.com?subject=FIPE%20pilot%20inquiry">Talk engineering <span aria-hidden="true">↗</span></a>
+        <button id="menuButton" class="menu-button" type="button" aria-label="Open navigation" aria-controls="mobileNav" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#platform">Platform</a><a href="#evidence">Evidence</a><a href="#protocols">Protocols</a><a href="#pilot">Pilot program</a><a href="#about">About</a>
+    </nav>
+  </header>
 
-    <footer>© 2026 Austurusa · <a href="mailto:jack@austurusa.com">jack@austurusa.com</a> · <a href="/">index</a></footer>
-    </main></body></html>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> AUSTURUSA / INTRODUCING FIPE <span class="eyebrow-line"></span> 001</div>
+          <h1 id="hero-title">KNOW<br>THE <em>EDGE.</em></h1>
+          <p class="hero-description">Your silicon works at nominal timing. <strong>How close is it to failure?</strong></p>
+          <p class="hero-support">FIPE is a programmable timing and observation engine for digital interfaces—designed to turn controlled protocol violations into measurable operating margins, statistical evidence, and engineering decisions.</p>
+          <div class="hero-ctas">
+            <a class="button button-primary" href="#pilot">Explore the pilot <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://github.com/jlsviper/fipe" target="_blank" rel="noopener noreferrer">Explore the RTL <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-bottom">
+          <div class="hero-status"><span class="small-cross">✳</span> FIRST-SILICON CHARACTERIZATION / FPGA PILOT IN DEVELOPMENT</div>
+          <div class="hero-coordinates">CONCEPT CGI / TIMING IS A MEASURABLE PRIMITIVE <span class="scroll-arrow">↓</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="signal-strip" aria-hidden="true"><div class="signal-strip-track"><span>SPECIFICATION</span><span class="dot-spr">✳</span><span>STIMULUS</span><span class="dot-spr">✳</span><span>OBSERVATION</span><span class="dot-spr">✳</span><span>STATISTICS</span><span class="dot-spr">✳</span><span>ENGINEERING EVIDENCE</span></div></div>
+
+    <section class="section-intro section" id="platform" aria-labelledby="platform-heading">
+      <div class="container intro-grid">
+        <div class="section-aside"><span class="section-index">01 / THE PROBLEM</span><div class="aside-rule"></div><span class="micro-label">FROM PASS / FAIL TO HOW MUCH</span></div>
+        <div>
+          <h2 id="platform-heading" class="display-heading">The bus works.<br><span class="dimmed">That tells you almost nothing.</span></h2>
+          <p class="large-copy">A successful transaction confirms that a device worked <em>once</em>, under <em>one</em> set of conditions. It doesn't tell you how much setup time the part needs, where acknowledgments begin to fail, or whether the next silicon revision has shifted its margins.</p>
+          <p class="body-copy">FIPE is built for the questions hiding behind nominal functional pass/fail: timing tolerances, part-to-part variation, unexpected failure regions, and the evidence needed to investigate them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section engine-section" aria-labelledby="engine-heading">
+      <div class="container">
+        <div class="section-heading-row"><div><span class="section-index">02 / THE ENGINE</span><h2 id="engine-heading" class="display-heading">Timing, under control<span class="accent-period">.</span></h2></div><p class="section-lead">One programmable engine for controlled stimulus, synchronized capture, and repeatable timing experiments.</p></div>
+        <div class="engine-grid">
+          <article class="engine-card engine-feature">
+            <div class="card-top"><span>01 — CONTROL</span><span class="card-cross">✳</span></div>
+            <div class="event-demo" aria-label="Illustration of a digital timing skew"><svg viewBox="0 0 650 260" role="img" aria-label="SCL and SDA timing edge diagram showing programmed skew"><defs><linearGradient id="edgeGrad"><stop stop-color="#76eddb"/><stop offset="1" stop-color="#9fff90"/></linearGradient></defs><g opacity=".18" stroke="#e7f8ee" stroke-width=".75"> <path d="M0 48H650 M0 96H650 M0 144H650 M0 192H650 M0 240H650"/><path d="M55 0V260M145 0V260M235 0V260M325 0V260M415 0V260M505 0V260M595 0V260"/></g><text x="18" y="89" fill="#96a7a3" font-size="15" font-family="monospace">SCL</text><text x="18" y="190" fill="#96a7a3" font-size="15" font-family="monospace">SDA</text><path d="M85 126H220V60H343V126H480V60H610" fill="none" stroke="#d4e4df" stroke-width="3" stroke-linejoin="round"/><path d="M85 218H245V154H465V218H610" fill="none" stroke="url(#edgeGrad)" stroke-width="3" stroke-linejoin="round"/><path class="moving-edge" d="M343 45V238" stroke="#9cf6c6" stroke-width="1.5" stroke-dasharray="6 5"/><rect class="skew-box" x="247" y="164" width="120" height="32" rx="3" fill="#0c1719" stroke="#60d7b5"/><text class="skew-label" x="307" y="185" text-anchor="middle" font-size="13" font-family="monospace" fill="#a2f8c5">Δt = +80 ns</text><path d="M245 239H343" fill="none" stroke="#9cf6c6" stroke-width="1.6"/><path d="m245 239 7-5v10l-7-5Zm98 0-7-5v10l7-5Z" fill="#9cf6c6"/></svg></div>
+            <div class="engine-card-copy"><span class="tiny-meta">EXPLICIT TIMESTAMPS / RUNTIME SKEW</span><h3>Move the edge.<br>Keep the meaning.</h3><p>Describe transactions as scheduled pin events. Perturb selected event classes at runtime without rewriting entire protocol sequences for each sweep.</p></div>
+          </article>
+          <article class="engine-card"><div class="card-top"><span>02 — OBSERVE</span><span class="card-cross">↗</span></div><div class="observe-art" aria-hidden="true"><div class="observe-hex">0x50 <span>ACK</span></div><div class="observe-hex muted-hex">0x50 <span>NACK</span></div><div class="observe-ladder"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="engine-card-copy"><span class="tiny-meta">CAPTURE / CLASSIFY / REPLAY</span><h3>See what changed.</h3><p>Capture responses against a common timebase and associate outcomes with the specific timing condition that produced them.</p></div></article>
+          <article class="engine-card"><div class="card-top"><span>03 — QUANTIFY</span><span class="card-cross">↗</span></div><div class="stat-art" aria-hidden="true"><div class="stat-grid"></div><svg viewBox="0 0 350 160"><path d="M12 143C57 142 84 141 109 135S154 124 174 93S193 28 219 21S263 15 340 15" fill="none" stroke="#a8fcb3" stroke-width="3"/><path d="M12 143C57 142 84 141 109 135S154 124 174 93S193 28 219 21S263 15 340 15V160H12Z" fill="url(#fillgreen)" opacity=".12"/><defs><linearGradient id="fillgreen" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bafcb6"/><stop offset="1" stop-color="#bafcb6" stop-opacity="0"/></linearGradient></defs><path d="M195 9V151" stroke="#ffb989" stroke-dasharray="5 4"/><circle cx="195" cy="52" r="5" fill="#ffb989"/></svg><span class="stat-label">P(PASS) →</span></div><div class="engine-card-copy"><span class="tiny-meta">SWEEPS / MARGINS / STATISTICS</span><h3>Find the boundary.</h3><p>Estimate timing thresholds, quantify uncertainty, and inspect where devices or populations diverge.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section report-section" aria-labelledby="report-heading">
+      <div class="container report-layout">
+        <div class="report-story"><span class="section-index">03 / THE OUTPUT</span><h2 id="report-heading" class="display-heading">From bus traffic<br>to <span class="highlight-italic">engineering evidence.</span></h2><p class="body-copy">Not another folder of oscilloscope screenshots. A coherent characterization study: measured or simulated margins labeled by evidence type, per-device variation, transaction-level outcomes, and analysis with explicit uncertainty.</p><ul class="feature-ticks"><li>Per-device t50 / modeled t99 boundaries</li><li>Pass-rate sweeps and operating maps</li><li>Population and revision comparisons</li><li>Traceable failures and portable exports</li></ul><p class="safety-note"><span class="status-dot"></span> The interactive preview shown here uses <strong>simulated EEPROM data</strong>. No physical FIPE-to-DUT measurement is claimed.</p></div>
+        <div class="report-window" role="region" aria-label="Interactive simulated characterization preview">
+          <div class="window-bar"><div class="window-dots"><span></span><span></span><span></span></div><span>FIPELAB / CHARACTERIZATION</span><span class="window-live">SIMULATION</span></div>
+          <div class="window-content"><div class="report-panel-heading"><div><div class="report-overline">STUDY / EEPROM TIMING</div><h3>Sample population</h3><p>Data setup — model-estimated t99</p></div><span class="trial-counter">12 DUTs</span></div>
+            <div class="report-tabs" role="group" aria-label="Choose simulated supplier"><button class="tab-button active" data-supplier="a" type="button" aria-pressed="true">Brand A</button><button class="tab-button" data-supplier="b" type="button" aria-pressed="false">Brand B</button></div>
+            <div class="report-metrics"><div><span>WORST DEVICE</span><strong id="worstDevice">A-05</strong></div><div><span>ESTIMATED t99</span><strong id="worstT99">214 <small>ns</small></strong></div><div><span>REFERENCE</span><strong>250 <small>ns</small></strong></div></div>
+            <div class="chart-label-row"><span>DEVICE-BY-DEVICE TIMING ESTIMATES</span><span id="chartVerdict">MARGINAL / UNCERTAIN</span></div>
+            <div class="bars-chart" id="barsChart" aria-label="Illustrative per-device model-estimated t99 data setup values"></div>
+            <div class="chart-footer"><span><i class="chart-green"></i> MODELED t99</span><span><i class="chart-orange"></i> 250 ns REFERENCE</span></div>
+          </div>
+          <div class="window-foot"><span>BASED ON SIMULATED FIPE STUDY / NOT PHYSICAL DUT DATA</span><span>REV H · FIPELAB</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section evidence-section" id="evidence" aria-labelledby="evidence-heading">
+      <div class="container">
+        <div class="section-heading-row"><div><span class="section-index">04 / THE EVIDENCE</span><h2 id="evidence-heading" class="display-heading">Built to be challenged<span class="accent-period">.</span></h2></div><p class="section-lead">Different kinds of proof are not interchangeable. Here is what is implemented, what is simulated, and what the pilot must still establish.</p></div>
+        <div class="evidence-grid">
+          <article class="evidence-card"><div class="evidence-tag"><span class="tag-dot lime"></span> PUBLIC / ENGINEERING</div><div class="evidence-number">50<span>MHz</span></div><h3>Earlier ASIC physical-design baseline</h3><p>Reported timing closure at 50 MHz on an IHP 130 nm routed implementation, with clean DRC/LVS/antenna checks and formal/gate-level evidence for the documented baseline.</p><a href="https://github.com/jlsviper/fipe" target="_blank" rel="noopener noreferrer" class="text-link">Inspect the repository ↗</a><span class="evidence-foot">NEWER RTL CHANGES REQUIRE A FRESH GDS RUN</span></article>
+          <article class="evidence-card"><div class="evidence-tag"><span class="tag-dot cyan"></span> PRIVATE / SIMULATION</div><div class="evidence-number">45,760<span>trials</span></div><h3>Automated characterization study</h3><p>A simulated two-supplier EEPROM study with timing sweeps, estimated boundaries, uncertainty intervals, shmoo plots and transaction-level inspection.</p><a href="mailto:jack@austurusa.com?subject=Request%20FIPE%20characterization%20demo" class="text-link">Request a technical walkthrough ↗</a><span class="evidence-foot">12 SIMULATED DEVICES · NOT PHYSICAL SILICON</span></article>
+          <article class="evidence-card"><div class="evidence-tag"><span class="tag-dot amber"></span> PRIVATE / METHOD STUDY</div><div class="evidence-number">1,200<span>cases</span></div><h3>Statistical method qualification</h3><p>Monte Carlo experiments test estimator bias, interval coverage and classification behavior under a specified single-threshold simulation model.</p><a href="mailto:jack@austurusa.com?subject=FIPE%20method%20qualification%20discussion" class="text-link">Discuss the methodology ↗</a><span class="evidence-foot">MODEL-CONDITIONAL RESULTS · NOT A HARDWARE CERTIFICATION</span></article>
+        </div>
+        <div class="evidence-caveat"><span class="icon-asterisk">✳</span><p><strong>The honest frontier:</strong> Physical FPGA implementation, DUT-pin timing calibration, independent instrument correlation, and repeatable real-device characterization are the next commercial validation gates.</p></div>
+      </div>
+    </section>
+
+    <section class="section protocols-section" id="protocols" aria-labelledby="protocols-heading">
+      <div class="container protocols-layout"><div><span class="section-index">05 / THE ARCHITECTURE</span><h2 id="protocols-heading" class="display-heading">Many protocols.<br><span class="dimmed">One timing machine.</span></h2><p class="body-copy">FIPE expresses protocol behavior as timestamped events, programmable transformations, and observations. The timing engine can be reused; each new electrical interface still requires the appropriate physical layer, test definitions and validation.</p><div class="protocol-legend"><span><i class="tag-dot lime"></i> PILOT FOCUS</span><span><i class="tag-dot cyan"></i> RTL / SIMULATION DEMO</span><span><i class="tag-dot amber"></i> FRAME-LEVEL DEMO</span></div></div>
+      <div class="protocol-grid">
+        <div class="protocol-tile pilot"><strong>I²C</strong><span>FIRST PILOT FOCUS</span></div><div class="protocol-tile pilot"><strong>SPI</strong><span>FIRST PILOT FOCUS</span></div>
+        <div class="protocol-tile sim"><strong>UART</strong><span>RTL / SIMULATION</span></div><div class="protocol-tile sim"><strong>1-WIRE</strong><span>RTL / SIMULATION</span></div>
+        <div class="protocol-tile sim"><strong>JTAG</strong><span>RTL / SIMULATION</span></div><div class="protocol-tile sim"><strong>SWD</strong><span>RTL / SIMULATION</span></div>
+        <div class="protocol-tile frame"><strong>USB-LS</strong><span>PACKET-LEVEL DEMO</span></div><div class="protocol-tile frame"><strong>CAN 2.0A</strong><span>FRAME-LEVEL DEMO</span></div>
+      </div></div>
+    </section>
+
+    <section class="section pilot-section" id="pilot" aria-labelledby="pilot-heading">
+      <div class="container pilot-panel">
+        <div class="pilot-head"><span class="section-index">06 / DESIGN-PARTNER PROGRAM</span><span class="pilot-availability"><span class="pulse"></span> EXPLORING FIRST PILOTS</span></div>
+        <h2 id="pilot-heading" class="pilot-display">FIRST SILICON.<br><span>REAL MARGINS.</span></h2>
+        <p class="pilot-intro">We're looking for an initial engineering partner to help validate FIPE on physical I²C/SPI devices and shape a practical pre-ATE characterization workflow.</p>
+        <div class="pilot-stages"><div><span>01 / DEFINE</span><h3>Choose a meaningful device</h3><p>One interface, a few critical timing questions, an agreed test fixture and acceptance criteria.</p></div><div><span>02 / MEASURE</span><h3>Correlate and characterize</h3><p>Controlled timing sweeps, repeatability checks, and independent measurement correlation at DUT pins.</p></div><div><span>03 / DELIVER</span><h3>Get the evidence</h3><p>Interactive HTML, machine-readable data, uncertainty analysis and engineering findings.</p></div></div>
+        <div class="pilot-bottom"><a class="button button-dark" href="mailto:jack@austurusa.com?subject=FIPE%20first-silicon%20pilot&body=Hi%20Jack%2C%0A%0AWe%27re%20interested%20in%20discussing%20a%20FIPE%20pilot.%0ADevice%20or%20interface%3A%20%0ARelevant%20timing%20question%3A%20%0A%0A">Discuss a pilot <span aria-hidden="true">↗</span></a><span>ENGINEER-TO-ENGINEER. NO SALES FUNNEL.</span></div>
+      </div>
+    </section>
+
+    <section class="section founder-section" id="about" aria-labelledby="about-heading">
+      <div class="container founder-layout">
+        <div class="founder-photo-frame"><div class="founder-photo-backdrop"></div><img class="founder-photo" src="/assets/jack-shaquer.jpg" alt="Jack Shaquer" loading="lazy" width="700" height="875"><div class="founder-photo-caption">FOUNDER / ENGINEERING</div></div>
+        <div class="founder-copy"><span class="section-index">07 / THE PERSON BEHIND THE INSTRUMENT</span><h2 id="about-heading" class="display-heading">Built by an<br><em>engineer.</em></h2><h3>Jack Shaquer</h3><p>Electrical engineer with professional experience spanning embedded hardware, PCB development, power conversion, closed-loop mixed-signal electronics, hardware validation, and Python-based instrumentation. Current independent work includes FIPE digital ASIC design and a proposed formally checked power-controller safety kernel.</p><div class="founder-links"><a href="mailto:jack@austurusa.com"><span>EMAIL</span>jack@austurusa.com <span>↗</span></a><a href="https://www.linkedin.com/in/jackshaquer" target="_blank" rel="noopener noreferrer"><span>LINKEDIN</span>linkedin.com/in/jackshaquer <span>↗</span></a></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="footer-brand" href="#top">AUSTURUSA<span>.</span></a><p>Timing as a measurable primitive.<br>Evidence before assertion.</p></div><div class="footer-side"><span>© <span id="year">2026</span> AUSTURUSA TECHNOLOGIES</span><a href="https://github.com/jlsviper/fipe" target="_blank" rel="noopener noreferrer">FIPE SOURCE ↗</a><a href="mailto:jack@austurusa.com">CONTACT ↗</a><a href="#top">BACK TO TOP ↑</a></div></div></footer>
+</body>
+</html>

@@ -1,5 +1,30 @@
 (() => {
   'use strict';
+  // Persisted mode choice. Keep all controls and the browser toolbar in sync.
+  const themeToggle = document.getElementById('themeToggle');
+  const themeLabel = document.getElementById('themeLabel');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const syncTheme = () => {
+    const light = document.documentElement.dataset.theme === 'light';
+    const next = light ? 'dark' : 'light';
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', `Switch to ${next} mode`);
+      themeToggle.setAttribute('aria-pressed', String(light));
+      themeToggle.title = `Switch to ${next} mode`;
+    }
+    if (themeLabel) themeLabel.textContent = `${next[0].toUpperCase()}${next.slice(1)} mode`;
+    if (themeMeta) themeMeta.content = light ? '#f1f7f1' : '#070b0d';
+  };
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('austurusa-theme', next); } catch(e) { /* Private browsing: toggle still works for this visit. */ }
+      syncTheme();
+    });
+  }
+  syncTheme();
+
   const menuButton = document.getElementById('menuButton');
   const mobileNav = document.getElementById('mobileNav');
   if (menuButton && mobileNav) {
